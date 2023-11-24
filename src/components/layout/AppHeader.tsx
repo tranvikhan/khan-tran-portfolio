@@ -29,7 +29,7 @@ export const AppHeader = () => {
         }`}
       >
         <Container>
-          <div className="flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0 relative ">
+          <div className="flex flex-wrap items-center justify-between py-4 gap-6 md:py-4 md:gap-0 relative">
             <input
               aria-hidden="true"
               type="checkbox"
@@ -54,24 +54,24 @@ export const AppHeader = () => {
                   htmlFor="toggle_nav"
                   aria-label="humburger"
                   id="hamburger"
-                  className="relative  p-6 -mr-6"
+                  className="relative p-6 -mr-6"
                 >
                   <div
                     aria-hidden="true"
                     id="line"
-                    className="m-auto h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300"
+                    className="m-auto h-0.5 w-5 rounded bg-primary dark:bg-gray-300 transition duration-300"
                   ></div>
                   <div
                     aria-hidden="true"
                     id="line2"
-                    className="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300"
+                    className="m-auto mt-2 h-0.5 w-5 rounded bg-primary dark:bg-gray-300 transition duration-300"
                   ></div>
                 </label>
               </div>
             </div>
             <div
               aria-hidden="true"
-              className="fixed z-10 inset-0 h-screen w-screen bg-white/70 backdrop-blur-2xl origin-bottom scale-y-0 transition duration-500 peer-checked:origin-top peer-checked:scale-y-100 lg:hidden dark:bg-gray-900/70"
+              className="fixed z-10 inset-0 h-screen w-screen bg-white backdrop-blur-2xl origin-bottom scale-y-0 transition duration-500 peer-checked:origin-top peer-checked:scale-y-100 lg:hidden dark:bg-gray-900"
             ></div>
             <div
               className="flex-col z-20 flex-wrap gap-6 p-8 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 justify-end w-full invisible opacity-0 translate-y-1  absolute top-full left-0 transition-all duration-300 scale-95 origin-top 

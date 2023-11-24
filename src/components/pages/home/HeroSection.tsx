@@ -23,12 +23,13 @@ export const HeroSection = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="flex-1 flex flex-row justify-center">
               <Image
+                data-aos="fade-up"
                 src="/images/avatars/khan-tran.png"
                 alt="art cover"
                 loading="lazy"
                 width="697"
                 height="974"
-                className="max-w-[400px] z-10"
+                className="w-[300px] md:w-full max-w-[400px] z-10"
               />
               <h2 className="absolute inset-0 z-0 text-[100px] font-bold opacity-20 text-white dark:text-black">
                 Product Designer
@@ -36,7 +37,11 @@ export const HeroSection = () => {
                 Developer
               </h2>
             </div>
-            <div className="flex-1 flex flex-col gap-4 ">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className="flex-1 flex flex-col gap-4 "
+            >
               <h3 className="text-3xl text-black dark:text-white">
                 Hello ✌, I&apos;m
               </h3>
@@ -50,7 +55,7 @@ export const HeroSection = () => {
                 brings a unique blend of artistic flair and technical expertise
                 to the digital realm.
               </p>
-              <div className="mt-4">
+              <div className="mt-4 flex flex-row">
                 <Button href={ROUTES.CONTACT}>Contact me</Button>
               </div>
             </div>

@@ -6,15 +6,21 @@ export interface ProjectCardProps {
   imageUrl: string;
   title: string;
   description: string;
+  aosDuration?: string;
 }
 export const ProjectCard = ({
   id,
   imageUrl,
   title,
   description,
+  aosDuration = "500",
 }: ProjectCardProps) => {
   return (
-    <div className="group p-4 sm:p-6 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+    <div
+      data-aos-duration={aosDuration}
+      data-aos="fade-up"
+      className="group p-4 sm:p-6 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10"
+    >
       <div className="relative overflow-hidden rounded-xl">
         <Image
           src={imageUrl}
