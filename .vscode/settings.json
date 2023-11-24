@@ -5,5 +5,6 @@
   "cSpell.ignoreWords": ["tailwindcss", "Fifa"],
   "jest.autoRun": "off",
   "jest.showCoverageOnLoad": true,
-  "jest.coverageFormatter": "GutterFormatter"
+  "jest.coverageFormatter": "GutterFormatter",
+  "cSpell.words": ["Telerik"]
 }

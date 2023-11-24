@@ -47,6 +47,10 @@ export const AboutSection = () => {
                 title="MUI Design Systems"
                 imageUrl="/images/tech-stacks/mui.png"
               />
+              <TechStackIcon
+                title="Telerik Kendo UI"
+                imageUrl="/images/tech-stacks/kendo.png"
+              />
             </div>
           </div>
         </div>
