@@ -45,10 +45,10 @@ export default function ProjectPage() {
               {project.images.map((image, index) => (
                 <div
                   key={image.src}
-                  data-aos="fade-up"
+                  data-aos={image.className ? undefined : "fade-up"}
                   data-aos-duration={
                     image.className
-                      ? "500"
+                      ? undefined
                       : (index + 1) % 3 === 0
                       ? "900"
                       : (index + 1) % 2 === 0
