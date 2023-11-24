@@ -43,21 +43,16 @@ export default function ProjectPage() {
             </p>
             <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8 col-span-3">
               {project.images.map((image, index) => (
-                <div
-                  key={image.src}
-                  data-aos={image.className ? undefined : "fade-up"}
-                  data-aos-duration={
-                    image.className
-                      ? undefined
-                      : (index + 1) % 3 === 0
-                      ? "900"
-                      : (index + 1) % 2 === 0
-                      ? "700"
-                      : "500"
-                  }
-                  className={image.className}
-                >
+                <div key={image.src} className={image.className}>
                   <Image
+                    data-aos={"fade-up"}
+                    data-aos-duration={
+                      (index + 1) % 3 === 0
+                        ? "900"
+                        : (index + 1) % 2 === 0
+                        ? "700"
+                        : "500"
+                    }
                     src={image.src}
                     alt={image.alt ?? "Project image"}
                     loading="lazy"
