@@ -47,7 +47,9 @@ export default function ProjectPage() {
                   key={image.src}
                   data-aos="fade-up"
                   data-aos-duration={
-                    (index + 1) % 3 === 0
+                    image.className
+                      ? "500"
+                      : (index + 1) % 3 === 0
                       ? "900"
                       : (index + 1) % 2 === 0
                       ? "700"

@@ -23,6 +23,7 @@ export const AppHeader = () => {
   useEffect(() => {
     AOS.init({
       easing: "ease-in-out",
+      offset: 100,
     });
   }, []);
 
