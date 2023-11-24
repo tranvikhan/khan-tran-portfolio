@@ -2,9 +2,10 @@
 import { Container } from "./Container";
 import Image from "next/image";
 import { ROUTES } from "@/constants/routes";
-import { Button } from "../Button";
 import { NavButton } from "../NavButton";
 import { useEffect, useState } from "react";
+import AOS from "aos";
+
 export const AppHeader = () => {
   const [isShow, setIsShow] = useState(false);
   const handleScroll = () => {
@@ -17,6 +18,12 @@ export const AppHeader = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  useEffect(() => {
+    AOS.init({
+      easing: "ease-in-out",
+    });
   }, []);
 
   return (

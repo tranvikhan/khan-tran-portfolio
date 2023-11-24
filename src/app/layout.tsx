@@ -1,13 +1,9 @@
-"use client";
-
-import "./globals.css";
 import "aos/dist/aos.css";
-import AOS from "aos";
+import "./globals.css";
 
-import { Roboto } from "next/font/google";
-import { AppHeader } from "@/components/layout/AppHeader";
 import { AppFooter } from "@/components/layout/AppFooter";
-import { useEffect } from "react";
+import { AppHeader } from "@/components/layout/AppHeader";
+import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -26,12 +22,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  useEffect(() => {
-    AOS.init({
-      easing: "ease-in-out",
-    });
-  }, []);
-
   return (
     <html lang="en" className="light">
       <body className={`${roboto.className} bg-white dark:bg-gray-900`}>
