@@ -45,9 +45,11 @@ export default function ProjectPage() {
               {project.images.map((image, index) => (
                 <div key={image.src} className={image.className}>
                   <Image
-                    data-aos="zoom-out"
+                    data-aos={project.disabledAnimation ? undefined : "fade-up"}
                     data-aos-duration={
-                      (index + 1) % 3 === 0
+                      project.disabledAnimation
+                        ? undefined
+                        : (index + 1) % 3 === 0
                         ? "900"
                         : (index + 1) % 2 === 0
                         ? "700"

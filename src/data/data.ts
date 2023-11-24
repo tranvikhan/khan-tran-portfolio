@@ -54,6 +54,7 @@ export const projects: {
   },
   ["ptn-sport"]: {
     id: "ptn-sport",
+    disabledAnimation: true,
     name: "PTNSport",
     overview: `The comprehensive website for the PTN Sport project serves as an indispensable hub, not only offering real-time updates on PTN Global's sporting events but also providing in-depth details on a wide array of athletic competitions. Users can easily navigate through the platform to access schedules, live scores, and exclusive insights into their favorite sports. Additionally, the website features engaging multimedia content, including highlights, interviews, and behind-the-scenes footage, enhancing the overall experience for sports enthusiasts. With a user-friendly interface and a commitment to delivering accurate and timely information, the PTN Sport website aims to become the go-to destination for individuals seeking a centralized source for all things related to PTN Global's diverse sporting events.`,
     thumbnail: "/images/projects/ptn-sport/banner.png",
@@ -211,6 +212,7 @@ export const projects: {
   ["small-gift"]: {
     id: "small-gift",
     name: "SmallGift",
+    disabledAnimation: true,
     overview: `The SmallGift project is a non-profit initiative aimed at facilitating charitable activities through innovative software solutions, offering an organized platform for philanthropic initiatives.`,
     thumbnail: "/images/projects/small-gift/banner.png",
     images: [

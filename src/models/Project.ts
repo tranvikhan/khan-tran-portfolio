@@ -9,6 +9,7 @@ export interface Project {
   technologies: string[];
   roles: string[];
   demo?: string;
+  disabledAnimation?: boolean;
 }
 
 export interface ProjectImage {
