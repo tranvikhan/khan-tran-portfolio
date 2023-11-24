@@ -23,7 +23,9 @@ export const AboutSection = () => {
             data-aos="fade-up"
             className="flex-1 flex flex-col gap-4 bg-white bg-opacity-20 rounded-xl p-4"
           >
-            <h3 className="text-lg font-medium text-gray-50 px-4">My skills</h3>
+            <h3 className="text-2xl font-light text-gray-50 px-4 pt-4">
+              My skills
+            </h3>
             <div className="grid grid-cols-2 xl:grid-cols-3 gap-2">
               <TechStackIcon
                 title="Figma"

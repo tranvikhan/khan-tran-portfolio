@@ -1,5 +1,6 @@
 import { ROUTES } from "@/constants/routes";
 import Image from "next/image";
+import { ExternalLink } from "react-feather";
 
 export interface ProjectCardProps {
   id: string;
@@ -38,8 +39,12 @@ export const ProjectCard = ({
         <p className="mt-6 mb-8 text-gray-600 dark:text-gray-300 line-clamp-3">
           {description}
         </p>
-        <a className="inline-block" href={ROUTES.PROJECT_DETAILS + id}>
-          <span className="text-primary hover:opacity-80">Read more</span>
+        <a
+          className="flex flex-row gap-2 items-center text-primary hover:opacity-80"
+          href={ROUTES.PROJECT_DETAILS + id}
+        >
+          <span>Read more</span>
+          <ExternalLink size={18} />
         </a>
       </div>
     </div>
