@@ -3,55 +3,55 @@ import { Project } from "@/models/Project";
 export const projects: {
   [key in string]: Project;
 } = {
-  ["vgo"]: {
-    id: "vgo",
-    name: "VGO",
-    overview: `VGO not only simplifies the process of ordering Vietnamese cuisine for users residing overseas but also offers a diverse menu selection, ensuring an authentic taste of Vietnam delivered right to their doorstep. The user-friendly interface, coupled with secure payment options, enhances the overall experience, making it a convenient and delightful way for individuals abroad to savor the flavors of Vietnamese food from the comfort of their homes. Whether it's traditional pho, banh mi, or other Vietnamese delicacies, VGO brings the richness of Vietnamese culinary culture closer to those who miss the taste of home.`,
-    thumbnail: "/images/projects/vgo/banner.png",
-    images: [
-      {
-        src: "/images/projects/vgo/login.jpg",
-        alt: "Login screen",
-      },
-      {
-        src: "/images/projects/vgo/shop-list.jpg",
-        alt: "Shop list",
-      },
-      {
-        src: "/images/projects/vgo/foods.jpg",
-        alt: "Foods list",
-      },
-      {
-        src: "/images/projects/vgo/order.jpg",
-        alt: "Order",
-      },
-      {
-        src: "/images/projects/vgo/card.jpg",
-        alt: "Cart",
-      },
-      {
-        src: "/images/projects/vgo/checkout.jpg",
-        alt: "Checkout",
-      },
-      {
-        src: "/images/projects/vgo/profile.jpg",
-        alt: "View profile",
-      },
-      {
-        src: "/images/projects/vgo/address.jpg",
-        alt: "Edit address",
-      },
-    ],
-    platforms: ["Android", "IOS"],
-    keyFeatures: [
-      `Search foods`,
-      `Order & payment`,
-      `Register/Login`,
-      `Manage profile`,
-    ],
-    technologies: [`Figma`, `React Native`, `Expo`],
-    roles: [`Product designer`, `UI/UX designer`, `Developer`],
-  },
+  // ["vgo"]: {
+  //   id: "vgo",
+  //   name: "VGO",
+  //   overview: `VGO not only simplifies the process of ordering Vietnamese cuisine for users residing overseas but also offers a diverse menu selection, ensuring an authentic taste of Vietnam delivered right to their doorstep. The user-friendly interface, coupled with secure payment options, enhances the overall experience, making it a convenient and delightful way for individuals abroad to savor the flavors of Vietnamese food from the comfort of their homes. Whether it's traditional pho, banh mi, or other Vietnamese delicacies, VGO brings the richness of Vietnamese culinary culture closer to those who miss the taste of home.`,
+  //   thumbnail: "/images/projects/vgo/banner.png",
+  //   images: [
+  //     {
+  //       src: "/images/projects/vgo/login.jpg",
+  //       alt: "Login screen",
+  //     },
+  //     {
+  //       src: "/images/projects/vgo/shop-list.jpg",
+  //       alt: "Shop list",
+  //     },
+  //     {
+  //       src: "/images/projects/vgo/foods.jpg",
+  //       alt: "Foods list",
+  //     },
+  //     {
+  //       src: "/images/projects/vgo/order.jpg",
+  //       alt: "Order",
+  //     },
+  //     {
+  //       src: "/images/projects/vgo/card.jpg",
+  //       alt: "Cart",
+  //     },
+  //     {
+  //       src: "/images/projects/vgo/checkout.jpg",
+  //       alt: "Checkout",
+  //     },
+  //     {
+  //       src: "/images/projects/vgo/profile.jpg",
+  //       alt: "View profile",
+  //     },
+  //     {
+  //       src: "/images/projects/vgo/address.jpg",
+  //       alt: "Edit address",
+  //     },
+  //   ],
+  //   platforms: ["Android", "IOS"],
+  //   keyFeatures: [
+  //     `Search foods`,
+  //     `Order & payment`,
+  //     `Register/Login`,
+  //     `Manage profile`,
+  //   ],
+  //   technologies: [`Figma`, `React Native`, `Expo`],
+  //   roles: [`Product designer`, `UI/UX designer`, `Developer`],
+  // },
   ["ptn-sport"]: {
     id: "ptn-sport",
     disabledAnimation: true,

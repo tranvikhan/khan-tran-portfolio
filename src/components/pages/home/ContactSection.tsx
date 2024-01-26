@@ -1,6 +1,6 @@
 import { SectionTitle } from "@/components/SectionTitle";
 import { Container } from "@/components/layout/Container";
-import { Mail, Map, Phone } from "react-feather";
+import { Linkedin, Mail, Map, Phone } from "react-feather";
 export const ContactSection = () => {
   return (
     <section id="contact" data-aos="fade-up">
@@ -15,13 +15,15 @@ export const ContactSection = () => {
         >
           <div className="flex flex-row items-center gap-4">
             <Mail />
-            <a href="mailto:khan.tran@ptnglobalcorp.com">
-              khan.tran@ptnglobalcorp.com
-            </a>
+            <a href="mailto:tranvikhan@gmail.com">tranvikhan@gmail.com</a>
           </div>
           <div className="flex flex-row items-center gap-4">
             <Phone />
             <a href="tel:+84 974 18 4717">+84 974 18 4717</a>
+          </div>
+          <div className="flex flex-row items-center gap-4">
+            <Linkedin />
+            <a href="https://www.linkedin.com/in/tranvikhan/">Khan Tran</a>
           </div>
           <div className="flex flex-row items-center gap-4">
             <Map />
