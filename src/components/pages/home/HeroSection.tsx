@@ -27,14 +27,14 @@ export const HeroSection = () => {
                 src="/images/avatars/khan-tran.png"
                 alt="art cover"
                 loading="lazy"
-                width="697"
-                height="974"
-                className="w-[300px] md:w-full max-w-[400px] z-10"
+                width="1024"
+                height="1024"
+                className="w-full max-w-[512px] z-10"
               />
-              <h2 className="absolute inset-0 z-0 text-[100px] font-bold opacity-20 text-white dark:text-black">
-                Product Designer
+              <h2 className="absolute inset-0 z-0 text-[100px] font-bold opacity-30 text-white dark:text-black">
+                Senior Software Developer
                 <br />
-                Developer
+                Product Designer
               </h2>
             </div>
             <div
