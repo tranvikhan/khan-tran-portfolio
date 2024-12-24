@@ -24,12 +24,12 @@ export const HeroSection = () => {
             <div className="flex-1 flex flex-row justify-center">
               <Image
                 data-aos="fade-up"
-                src="/images/avatars/khan-tran.png"
+                src="/images/avatars/kevin.png"
                 alt="art cover"
                 loading="lazy"
-                width="1024"
-                height="1024"
-                className="w-full max-w-[512px] z-10"
+                width="854"
+                height="1280"
+                className="w-full max-w-[408px] z-10"
               />
               <h2 className="absolute inset-0 z-0 text-[100px] font-bold opacity-30 text-white dark:text-black">
                 Senior Software Developer
