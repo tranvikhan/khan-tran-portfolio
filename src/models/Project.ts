@@ -3,6 +3,7 @@ export interface Project {
   name: string;
   overview: string;
   thumbnail: string;
+  cardImage?: string;
   images: ProjectImage[];
   platforms: string[];
   keyFeatures: string[];
@@ -15,5 +16,8 @@ export interface Project {
 export interface ProjectImage {
   src: string;
   alt?: string;
+  altVi?: string;
   className?: string;
+  width?: number;
+  height?: number;
 }

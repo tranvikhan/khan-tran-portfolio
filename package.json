@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@vercel/analytics": "^1.0.1",
     "aos": "^2.3.4",
@@ -16,6 +18,7 @@
     "date-fns": "^2.30.0",
     "eslint": "^8.54.0",
     "eslint-config-next": "^14.0.3",
+    "gsap": "^3.15.0",
     "next": "13.4.6",
     "postcss": "8.4.24",
     "react": "18.2.0",
@@ -29,5 +32,6 @@
     "@types/node": "^20.9.4",
     "@types/react": "^18.2.38",
     "@types/react-dom": "^18.2.17"
-  }
+  },
+  "packageManager": "yarn@1.22.19+sha512.ff4579ab459bb25aa7c0ff75b62acebe576f6084b36aa842971cf250a5d8c6cd3bc9420b22ce63c7f93a0857bc6ef29291db39c3e7a23aab5adfd5a4dd6c5d71"
 }
