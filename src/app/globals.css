@@ -32,7 +32,7 @@ html[data-theme="dark"] {
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-body { margin: 0; background: var(--surface); color: var(--ink); font-family: "Space Grotesk Variable", Arial, sans-serif; } /* impeccable-disable-line overused-font: chosen for the approved editorial comp's wide, geometric lettering */
+body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--font-sans), Arial, sans-serif; } /* impeccable-disable-line overused-font: chosen for the approved editorial comp's wide, geometric lettering */
 button, a { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
 a { color: inherit; text-decoration: none; }
@@ -68,7 +68,7 @@ html[data-theme="light"] .theme-switch svg:last-child, html[data-theme="dark"] .
 .hero__copy { width: 62%; position: relative; z-index: 2; padding: 0; }
 .hero__name { font-size: clamp(105px, 16.5vw, 255px); line-height: .79; letter-spacing: -.045em; font-weight: 700; margin: 0 0 12px; }
 .hero__name span { display: block; width: max-content; max-width: 100%; white-space: nowrap; }
-.hero__name span:last-child { color: transparent; -webkit-text-stroke: 2px var(--ink); }
+.hero__name span:last-child { margin-top: .25em; color: transparent; -webkit-text-stroke: 2px var(--ink); }
 .hero__role { font-size: clamp(24px, 2.5vw, 42px); line-height: 1.15; font-weight: 500; letter-spacing: -.035em; margin: 0 0 7px; }
 .text-accent { display: inline-block; position: relative; white-space: nowrap; }
 .text-accent__line { position: absolute; left: 0; right: 0; bottom: -.06em; height: max(2px, .055em); background: currentColor; transform-origin: left center; pointer-events: none; }

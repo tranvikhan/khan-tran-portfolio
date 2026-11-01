@@ -36,7 +36,7 @@ export function ProjectClientPage() {
         .fromTo(".case-hero__image", { clipPath: "inset(0 0 13% 0)", y: 16 }, { clipPath: "inset(0 0 0% 0)", y: 0, duration: 0.7 }, 0.32);
       gsap.utils.toArray<HTMLElement>("[data-case-reveal]").forEach((element) => {
         gsap.from(element, {
-          y: 18, opacity: 0.78, duration: 0.58, ease: "power2.out",
+          y: 18, duration: 0.58, ease: "power2.out",
           scrollTrigger: { trigger: element, start: "top 90%", once: true },
         });
       });

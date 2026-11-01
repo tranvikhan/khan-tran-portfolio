@@ -34,7 +34,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header__inner page-gutter">
-        <Link className="wordmark" href={home} aria-label={`Trần Vi Khan (Kevin) — ${locale === "vi" ? "trang chủ" : "home"}`} onClick={() => setMenuOpen(false)}>
+        <Link className="wordmark" href={home} aria-label={`Kevin Khan Trần — ${locale === "vi" ? "trang chủ" : "home"}`} onClick={() => setMenuOpen(false)}>
           <strong>KEVIN</strong><span aria-hidden="true">/</span><span>KHAN TRẦN</span>
         </Link>
         <nav className={`site-nav${menuOpen ? " site-nav--open" : ""}`} aria-label={locale === "vi" ? "Điều hướng chính" : "Main navigation"} id="site-navigation">
@@ -44,9 +44,9 @@ export function SiteHeader() {
         </nav>
         <div className="site-controls">
           <div className="language-switch" role="group" aria-label={locale === "vi" ? "Ngôn ngữ" : "Language"}>
-            <a className={locale === "en" ? "active" : ""} href={localePath("en", basePath)} hrefLang="en" aria-label="English" aria-current={locale === "en" ? "true" : undefined}>EN</a>
+            <a className={locale === "en" ? "active" : ""} href={localePath("en", basePath)} hrefLang="en" aria-label="EN, English" aria-current={locale === "en" ? "true" : undefined}>EN</a>
             <span aria-hidden="true">/</span>
-            <a className={locale === "vi" ? "active" : ""} href={localePath("vi", basePath)} hrefLang="vi" aria-label="Tiếng Việt" aria-current={locale === "vi" ? "true" : undefined}>VI</a>
+            <a className={locale === "vi" ? "active" : ""} href={localePath("vi", basePath)} hrefLang="vi" aria-label="VI, Tiếng Việt" aria-current={locale === "vi" ? "true" : undefined}>VI</a>
           </div>
           <span className="control-divider" aria-hidden="true" />
           <button className="theme-switch" type="button" onClick={toggleTheme} aria-label={theme === "light" ? t.theme.dark : t.theme.light} title={theme === "light" ? t.theme.dark : t.theme.light}>

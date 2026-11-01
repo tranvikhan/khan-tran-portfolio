@@ -35,7 +35,7 @@ export function HomePage() {
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       const intro = gsap.timeline({ defaults: { ease: "expo.out" } });
       intro
-        .fromTo(".hero__name span", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.85, stagger: 0.16 }, 0)
+        .fromTo(".hero__name span", { clipPath: "inset(-30% 100% -30% 0)" }, { clipPath: "inset(-30% 0% -30% 0)", duration: 0.85, stagger: 0.16 }, 0)
         .from(".hero__role", { y: 18, opacity: 0, duration: 0.55 }, 0.48)
         .from(".hero__role .text-accent__line", { scaleX: 0, transformOrigin: "left center", duration: 0.56 }, 0.72)
         .from(".hero__intro, .hero__cta", { y: 14, opacity: 0, duration: 0.5, stagger: 0.08 }, 0.59)
@@ -74,7 +74,7 @@ export function HomePage() {
 
       gsap.utils.toArray<HTMLElement>(".about-section [data-reveal], .contact-section [data-reveal]").forEach((element) => {
         gsap.from(element, {
-          y: 16, opacity: 0.75, duration: 0.55, ease: "power2.out",
+          y: 16, duration: 0.55, ease: "power2.out",
           scrollTrigger: { trigger: element, start: "top 88%", once: true },
         });
       });

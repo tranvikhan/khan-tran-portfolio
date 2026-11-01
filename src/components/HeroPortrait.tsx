@@ -32,12 +32,20 @@ const outfits = [
   },
 ] as const;
 
+const defaultOutfit = 2;
+
 export function HeroPortrait({ locale }: { locale: Locale }) {
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(defaultOutfit);
   const [paused, setPaused] = useState(false);
   const [interacting, setInteracting] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const [pageVisible, setPageVisible] = useState(true);
+  const [loadAllOutfits, setLoadAllOutfits] = useState(false);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setLoadAllOutfits(true), 2500);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -77,7 +85,7 @@ export function HeroPortrait({ locale }: { locale: Locale }) {
       <div className="hero__portrait-stage" role="img" aria-label={outfits[active].description[locale]}>
         {outfits.map((outfit, index) => (
           <div className={`hero__avatar-frame${active === index ? " hero__avatar-frame--active" : ""}`} aria-hidden="true" key={outfit.src}>
-            <Image src={outfit.src} alt="" fill priority={index === 2} sizes="(max-width: 700px) 90vw, (max-width: 1050px) 44vw, 42vw" className="hero__avatar" />
+            {(index === active || index === defaultOutfit || loadAllOutfits) && <Image src={outfit.src} alt="" fill priority={index === defaultOutfit} sizes="(max-width: 700px) 80vw, (max-width: 1050px) 44vw, 42vw" className="hero__avatar" />}
           </div>
         ))}
       </div>
@@ -89,7 +97,6 @@ export function HeroPortrait({ locale }: { locale: Locale }) {
               type="button"
               key={outfit.src}
               className={active === index ? "hero__outfit-option hero__outfit-option--active" : "hero__outfit-option"}
-              aria-label={`${labels.group}: ${outfit.name[locale]}`}
               aria-pressed={active === index}
               onClick={() => setActive(index)}
             >
