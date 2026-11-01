@@ -8,31 +8,22 @@ export type Theme = "light" | "dark";
 type SitePreferencesValue = {
   locale: Locale;
   theme: Theme;
-  setLocale: (locale: Locale) => void;
   toggleTheme: () => void;
 };
 
 const SitePreferencesContext = createContext<SitePreferencesValue | null>(null);
 
-export function SitePreferences({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en");
+export function SitePreferences({ locale, children }: { locale: Locale; children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    const savedLocale = window.localStorage.getItem("portfolio-locale");
     const savedTheme = window.localStorage.getItem("portfolio-theme");
-    if (savedLocale === "en" || savedLocale === "vi") setLocaleState(savedLocale);
     if (savedTheme === "light" || savedTheme === "dark") {
       setTheme(savedTheme);
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme("dark");
     }
   }, []);
-
-  useEffect(() => {
-    document.documentElement.lang = locale;
-    window.localStorage.setItem("portfolio-locale", locale);
-  }, [locale]);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -44,7 +35,6 @@ export function SitePreferences({ children }: { children: React.ReactNode }) {
     () => ({
       locale,
       theme,
-      setLocale: setLocaleState,
       toggleTheme: () => setTheme((current) => (current === "light" ? "dark" : "light")),
     }),
     [locale, theme]

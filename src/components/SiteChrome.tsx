@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, Moon, Sun, X } from "react-feather";
 import { useEffect, useState } from "react";
 import { useSitePreferences } from "@/components/SitePreferences";
+import { localePath } from "@/constants/site";
 import { copy } from "@/data/siteCopy";
 
 export function SiteSkipLink() {
@@ -13,11 +14,13 @@ export function SiteSkipLink() {
 }
 
 export function SiteHeader() {
-  const { locale, setLocale, theme, toggleTheme } = useSitePreferences();
+  const { locale, theme, toggleTheme } = useSitePreferences();
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const t = copy[locale];
-  const prefix = pathname === "/" ? "" : "/";
+  const home = localePath(locale, "/");
+  const prefix = pathname === home ? "" : home;
+  const basePath = pathname.replace(/^\/vi(?=\/|$)/, "") || "/";
 
   useEffect(() => setMenuOpen(false), [pathname]);
   useEffect(() => {
@@ -31,7 +34,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header__inner page-gutter">
-        <Link className="wordmark" href="/" aria-label="Kevin Khan Trần — home" onClick={() => setMenuOpen(false)}>
+        <Link className="wordmark" href={home} aria-label={`Trần Vi Khan (Kevin) — ${locale === "vi" ? "trang chủ" : "home"}`} onClick={() => setMenuOpen(false)}>
           <strong>KEVIN</strong><span aria-hidden="true">/</span><span>KHAN TRẦN</span>
         </Link>
         <nav className={`site-nav${menuOpen ? " site-nav--open" : ""}`} aria-label={locale === "vi" ? "Điều hướng chính" : "Main navigation"} id="site-navigation">
@@ -41,9 +44,9 @@ export function SiteHeader() {
         </nav>
         <div className="site-controls">
           <div className="language-switch" role="group" aria-label={locale === "vi" ? "Ngôn ngữ" : "Language"}>
-            <button type="button" className={locale === "en" ? "active" : ""} aria-pressed={locale === "en"} onClick={() => setLocale("en")}>EN</button>
+            <a className={locale === "en" ? "active" : ""} href={localePath("en", basePath)} hrefLang="en" aria-label="English" aria-current={locale === "en" ? "true" : undefined}>EN</a>
             <span aria-hidden="true">/</span>
-            <button type="button" className={locale === "vi" ? "active" : ""} aria-pressed={locale === "vi"} onClick={() => setLocale("vi")}>VI</button>
+            <a className={locale === "vi" ? "active" : ""} href={localePath("vi", basePath)} hrefLang="vi" aria-label="Tiếng Việt" aria-current={locale === "vi" ? "true" : undefined}>VI</a>
           </div>
           <span className="control-divider" aria-hidden="true" />
           <button className="theme-switch" type="button" onClick={toggleTheme} aria-label={theme === "light" ? t.theme.dark : t.theme.light} title={theme === "light" ? t.theme.dark : t.theme.light}>
@@ -65,7 +68,7 @@ export function SiteFooter() {
   const t = copy[locale];
   return (
     <footer className="site-footer page-gutter">
-      <p>© {new Date().getFullYear()} Khan Trần <span aria-hidden="true">·</span> {t.footer}</p>
+      <p>© {new Date().getFullYear()} Trần Vi Khan (Khan Trần) <span aria-hidden="true">·</span> {t.footer}</p>
       <a href="mailto:tranvikhan@gmail.com">tranvikhan@gmail.com <ArrowUpRight size={14} aria-hidden="true" /></a>
     </footer>
   );

@@ -12,12 +12,13 @@ import { useSitePreferences } from "@/components/SitePreferences";
 import { LensanShowcase } from "@/components/LensanShowcase";
 import { copy, displayRole, projectCopy } from "@/data/siteCopy";
 import { projects } from "@/data/data";
+import { localePath } from "@/constants/site";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const orderedProjects = Object.values(projects);
 
-export default function ProjectPage() {
+export function ProjectClientPage() {
   const { id } = useParams();
   const { locale } = useSitePreferences();
   const root = useRef<HTMLElement>(null);
@@ -44,14 +45,14 @@ export default function ProjectPage() {
   }, { scope: root, dependencies: [id, locale], revertOnUpdate: true });
 
   if (!project || !content) {
-    return <main id="main-content" className="missing-project page-gutter"><h1>{locale === "vi" ? "Không tìm thấy dự án" : "Project not found"}</h1><Link href="/#work">{t.back}</Link></main>;
+    return <main id="main-content" className="missing-project page-gutter"><h1>{locale === "vi" ? "Không tìm thấy dự án" : "Project not found"}</h1><Link href={`${localePath(locale, "/")}#work`}>{t.back}</Link></main>;
   }
 
   return (
     <main id="main-content" ref={root}>
       <article>
         <header className="case-hero page-gutter">
-          <Link href="/#work" className="case-back"><ArrowLeft size={18} aria-hidden="true" />{t.back}</Link>
+          <Link href={`${localePath(locale, "/")}#work`} className="case-back"><ArrowLeft size={18} aria-hidden="true" />{t.back}</Link>
           <div className="case-hero__headline"><p>{content.category}</p><h1 className="case-hero__title">{project.name}</h1></div>
           <p className="case-hero__summary">{content.summary}</p>
           <div className="case-hero__image">{project.id === "lensan" ? <LensanShowcase locale={locale} priority /> : <Image src={project.thumbnail} alt={`${project.name} ${locale === "vi" ? "ảnh giới thiệu dự án" : "project preview"}`} fill priority sizes="100vw" />}</div>
@@ -82,7 +83,7 @@ export default function ProjectPage() {
           return <figure key={`${image.src}-${index}`} data-case-reveal><Image src={image.src} alt={(locale === "vi" ? image.altVi : image.alt) || image.alt || `${project.name} ${locale === "vi" ? "màn hình" : "screen"} ${index + 1}`} width={imageWidth} height={imageHeight} sizes={imageSizes} /><figcaption>{String(index + 1).padStart(2, "0")} / {project.name}</figcaption></figure>;
         })}</div></section>
 
-        {next && <Link className="case-next page-gutter" href={`/projects/${next.id}`}><span>{t.next}</span><strong>{next.name}</strong><ArrowUpRight size={30} aria-hidden="true" /></Link>}
+        {next && <Link className="case-next page-gutter" href={localePath(locale, `/projects/${next.id}`)}><span>{t.next}</span><strong>{next.name}</strong><ArrowUpRight size={30} aria-hidden="true" /></Link>}
       </article>
     </main>
   );

@@ -20,9 +20,10 @@ export const copy = {
     },
     about: {
       title: "A little about me.",
-      leadBefore: "I’m Khan Trần. You can call me",
+      leadBefore: "I’m Trần Vi Khan, or Khan Trần. You can call me",
       leadAccent: "Kevin.",
       body: "I work across product design and software development, shaping ideas into web and mobile experiences. I care about the details people notice and the decisions that make a product easier to use.",
+      aliases: "Also known online as Vi Khan Dev, Kevin Dev, Khan Dev, Dev Khan and Dev Kevin.",
       approachTitle: "How I work",
       approach: "I move between product thinking, interface design, and implementation so the idea remains clear all the way to the finished product.",
       skillsTitle: "Tools & skills",
@@ -69,9 +70,10 @@ export const copy = {
     },
     about: {
       title: "Một chút về tôi.",
-      leadBefore: "Tôi là Khan Trần. Bạn có thể gọi tôi là",
+      leadBefore: "Tôi là Trần Vi Khan, hay Khan Trần. Bạn có thể gọi tôi là",
       leadAccent: "Kevin.",
       body: "Tôi làm việc ở giao điểm của thiết kế sản phẩm và phát triển phần mềm, biến ý tưởng thành trải nghiệm web và di động. Tôi chú ý đến những chi tiết người dùng cảm nhận được và những quyết định giúp sản phẩm dễ dùng hơn.",
+      aliases: "Trên mạng tôi còn được biết đến là Vi Khan Dev, Kevin Dev, Khan Dev, Dev Khan và Dev Kevin.",
       approachTitle: "Cách tôi làm việc",
       approach: "Tôi kết nối tư duy sản phẩm, thiết kế giao diện và triển khai để ý tưởng luôn rõ ràng từ đầu đến sản phẩm hoàn thiện.",
       skillsTitle: "Công cụ & kỹ năng",

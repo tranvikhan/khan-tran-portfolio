@@ -52,8 +52,8 @@ a { color: inherit; text-decoration: none; }
 .site-nav a:hover, .site-footer a:hover, .section-heading a:hover, .text-link:hover { opacity: .55; }
 .site-controls { display: flex; align-items: center; justify-content: flex-end; gap: 20px; }
 .language-switch { display: flex; align-items: center; gap: 6px; font-size: 14px; }
-.language-switch button { border: 0; background: none; padding: 8px 3px; min-width: 24px; min-height: 34px; color: var(--muted); }
-.language-switch button.active { color: var(--ink); font-weight: 700; }
+.language-switch a { display: inline-flex; align-items: center; justify-content: center; padding: 8px 3px; min-width: 24px; min-height: 34px; color: var(--muted); }
+.language-switch a.active { color: var(--ink); font-weight: 700; }
 .language-switch > span { color: var(--muted); }
 .control-divider { width: 1px; height: 20px; background: var(--rule); }
 .theme-switch { width: 60px; height: 29px; padding: 3px 7px; display: flex; align-items: center; justify-content: space-between; position: relative; border-radius: 99px; border: 1px solid var(--rule); color: var(--ink); background: var(--surface); }
@@ -156,6 +156,7 @@ html[data-theme="dark"] .project-tile--featured .project-tile__visual, html[data
 .about-section__top p { font-size: clamp(20px, 2vw, 32px); line-height: 1.2; max-width: 470px; margin: 0; }
 .about-section__content { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(40px, 8vw, 120px); padding-top: 45px; }
 .about-section__statement > p { font-size: clamp(27px, 3.1vw, 50px); letter-spacing: -.035em; line-height: 1.23; max-width: 930px; margin: 0 0 35px; }
+.about-section__statement > .about-section__aliases { color: var(--about-muted); font-size: 18px; letter-spacing: 0; line-height: 1.5; }
 .about-section__statement a { display: inline-flex; align-items: center; gap: 8px; border-bottom: 1px solid currentColor; padding-bottom: 4px; }
 .about-section__detail { align-self: flex-end; max-width: 430px; }
 .about-section__detail h3, .skills-section h3 { text-transform: uppercase; font-size: 13px; letter-spacing: .17em; margin: 0 0 18px; }

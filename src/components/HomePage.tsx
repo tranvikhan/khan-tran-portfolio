@@ -12,15 +12,23 @@ import { HeroPortrait } from "@/components/HeroPortrait";
 import { LensanShowcase } from "@/components/LensanShowcase";
 import { copy, projectCopy, skillGroups } from "@/data/siteCopy";
 import { projects } from "@/data/data";
+import { localePath, personId, siteUrl, toJsonLd, websiteId } from "@/constants/site";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const projectList = Object.values(projects);
-
-export default function Home() {
+export function HomePage() {
   const { locale } = useSitePreferences();
   const t = copy[locale];
   const root = useRef<HTMLElement>(null);
+  const profilePageData = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    url: `${siteUrl}${localePath(locale, "/")}`,
+    inLanguage: locale,
+    mainEntity: { "@id": personId },
+    isPartOf: { "@id": websiteId },
+  };
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -107,6 +115,7 @@ export default function Home() {
 
   return (
     <main id="main-content" ref={root}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: toJsonLd(profilePageData) }} />
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__main page-gutter">
           <div className="hero__copy">
@@ -137,7 +146,7 @@ export default function Home() {
             const showcase = project.id === "ptn-sport" || project.id === "easy-vocabulary";
             const hasCover = featured || secondFeature || showcase;
             return (
-              <Link className={`project-tile${featured ? " project-tile--featured" : ""}${secondFeature ? " project-tile--second-feature" : ""}${showcase ? " project-tile--showcase" : ""}${project.id === "small-gift" ? " project-tile--last" : ""}`} href={`/projects/${project.id}`} key={project.id} aria-label={`${t.work.view}: ${project.name}`} data-reveal>
+              <Link className={`project-tile${featured ? " project-tile--featured" : ""}${secondFeature ? " project-tile--second-feature" : ""}${showcase ? " project-tile--showcase" : ""}${project.id === "small-gift" ? " project-tile--last" : ""}`} href={localePath(locale, `/projects/${project.id}`)} key={project.id} aria-label={`${t.work.view}: ${project.name}`} data-reveal>
                 <div className="project-tile__visual">
                   <div className="project-tile__image">{featured ? <LensanShowcase locale={locale} decorative /> : <Image src={project.cardImage ?? project.thumbnail} alt="" fill sizes={secondFeature ? "(max-width: 1050px) 100vw, 70vw" : "(max-width: 1050px) 100vw, 50vw"} />}</div>
                   {hasCover && <div className="project-tile__cover"><span>{String(index + 1).padStart(2, "0")} <span aria-hidden="true">──</span><br />{content.category}</span><strong>{project.id === "easy-vocabulary" ? "Easy Vocabulary" : project.name}</strong>{(featured || secondFeature) && <p>{content.summary}</p>}<ArrowUpRight size={24} aria-hidden="true" /></div>}
@@ -153,7 +162,7 @@ export default function Home() {
       <section className="about-section page-gutter" id="about" aria-labelledby="about-title">
         <div className="about-section__top" data-reveal><h2 id="about-title" data-heading-reveal>{t.about.title}</h2><p>{t.about.leadBefore} <span className="text-accent" data-accent>{t.about.leadAccent}<span className="text-accent__line" aria-hidden="true" /></span></p></div>
         <div className="about-section__content">
-          <div className="about-section__statement" data-reveal><p>{t.about.body}</p><a href="#contact">{t.nav.contact}<ArrowUpRight size={18} aria-hidden="true" /></a></div>
+          <div className="about-section__statement" data-reveal><p>{t.about.body}</p><p className="about-section__aliases">{t.about.aliases}</p><a href="#contact">{t.nav.contact}<ArrowUpRight size={18} aria-hidden="true" /></a></div>
           <div className="about-section__detail" data-reveal><h3>{t.about.approachTitle}</h3><p>{t.about.approach}</p></div>
         </div>
         <div className="skills-section" data-reveal>
