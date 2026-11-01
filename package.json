@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-    "@tailwindcss/line-clamp": "^0.4.4",
     "@vercel/analytics": "^1.0.1",
     "aos": "^2.3.4",
     "autoprefixer": "10.4.14",

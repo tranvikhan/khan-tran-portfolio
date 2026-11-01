@@ -1,4 +1,4 @@
-import { RootDocument } from "@/components/RootDocument";
+import { RootDocument } from "@/app/RootDocument";
 import { siteMetadata } from "@/utils/seo";
 
 export const metadata = siteMetadata("vi");

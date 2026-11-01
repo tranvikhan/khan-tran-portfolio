@@ -979,5 +979,5 @@ module.exports = {
     "active",
     "disabled",
   ],
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [],
 };
